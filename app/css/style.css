@@ -1,0 +1,28 @@
+.puzzle-wrapper li {
+	height: 80px;
+	width: 80px;
+	border: 5px solid #f07;
+	border-radius: 5px;
+	font-size: 52px;
+	list-style: none;
+	display: inline;
+}
+body {
+	font-family: Nunito, sans-serif;
+}
+
+ul[dnd-list], ul[dnd-list] > li { 
+    position: relative;
+}
+
+button {
+	border: 1px solid;
+	border-radius: 5px;
+	color: white;
+	font-size: 20px;
+}
+
+.new-game-button {
+	background-color: #00ff91;
+	border-color: #00ff91;
+}

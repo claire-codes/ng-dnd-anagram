@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anagram App</title>
+	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body ng-app="AnagramApp">
+	<script src="js/angular.js"></script>
+	<script src="js/angular-drag-and-drop-lists.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services.js"></script>
+	<script src="js/controllers.js"></script>
+
+	<div ng-controller="anagramController">
+		Current attempt: {{attempt}} -> {{result}}
+		<div class="puzzle-wrapper">
+			{{puzzle.clue}}
+			<ul dnd-list="puzzle.clue"
+				dnd-disable-if="won">
+				<li 
+					ng-repeat="item in puzzle.clue"
+					dnd-draggable="item"
+					dnd-moved="puzzle.clue.splice($index, 1)"
+			        dnd-effect-allowed="move"
+			        dnd-dragend="movedCallback()"
+			        dnd-selected="models.selected = item"
+			        ng-class="{'selected': models.selected === item}"
+					>
+					{{item.letter}}</li>
+			</ul>
+		</div>
+		<div>
+			<button type="button" ng-click="newGame()" class="new-game-button">New Game</button>
+		</div>
+	</div>
+</body>
+</html>
