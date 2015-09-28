@@ -1,46 +1,24 @@
 angular.module('AnagramApp.controllers', []).
+  controller('anagramController', function($scope, AnagramFactory) {
 
-  /* Drivers controller */
-  controller('anagramController', function($scope, SillyService, PuzzleFactory) {
-  	$scope.attempt = '';
-  	$scope.result = 'Still wrong';
-  	$scope.won = false;
+  	$scope.newGame = function() {
+		$scope.anagram = angular.copy(AnagramFactory.getAnagram());
+		$scope.won = false;
+  		$scope.result = 'Rearrange the letters below to make a word and win!';
+	};
 
-  	$scope.puzzle = PuzzleFactory.getPuzzle();
- //  	{
-	//     "clue": [
-	//         {
-	//             "letter": "I"
-	//         },
-	//         {
-	//             "letter": "W"
-	//         },
-	//         {
-	//             "letter": "N"
-	//         }
-	//     ],
-	//     "solution": "WIN"
-	// };
+	$scope.newGame();
 
 	$scope.movedCallback = function() {
-		console.log('MOVED');
-		// current attempt
 		var attempt = '';
-		for (var i = 0; i < $scope.puzzle.clue.length; i++) {
-			attempt += $scope.puzzle.clue[i].letter; 
+		for (var i = 0; i < $scope.anagram.clue.length; i++) {
+			attempt += $scope.anagram.clue[i].letter; 
 		}
-		$scope.attempt = attempt;
-		if (attempt == $scope.puzzle.solution) {
-			$scope.result = 'WINNER WINNER CHICKEN DINNER';
+		if (attempt == $scope.anagram.solution) {
+			$scope.result = 'Yay you won! Have another go?';
 			$scope.won = true;
 		}
 	};
 
-	$scope.newGame = function() {
-		console.log('New game please');
-		$scope.puzzle = PuzzleFactory.getPuzzle();
-	};
-
-	$scope.floop = SillyService.sillySum(2, 2);
 
   });

@@ -14,26 +14,25 @@
 	<script src="js/controllers.js"></script>
 
 	<div ng-controller="anagramController">
-		Current attempt: {{attempt}} -> {{result}}
-		<div class="puzzle-wrapper">
-			{{puzzle.clue}}
-			<ul dnd-list="puzzle.clue"
-				dnd-disable-if="won">
+		<div class="anagram-wrapper">
+			<h2>Drag-and-Drop Anagram Game</h2>
+			<h3>{{result}}</h3>
+			<ul dnd-list="anagram.clue">
 				<li 
-					ng-repeat="item in puzzle.clue"
-					dnd-draggable="item"
-					dnd-moved="puzzle.clue.splice($index, 1)"
-			        dnd-effect-allowed="move"
-			        dnd-dragend="movedCallback()"
-			        dnd-selected="models.selected = item"
-			        ng-class="{'selected': models.selected === item}"
-					>
-					{{item.letter}}</li>
-			</ul>
-		</div>
-		<div>
+					ng-repeat="character in anagram.clue"
+					dnd-draggable="character"
+					dnd-moved="anagram.clue.splice($index, 1)"
+					dnd-effect-allowed="move"
+					dnd-dragend="movedCallback()"
+					dnd-disable-if="won"
+					ng-class="{'correct': won}">
+					{{character.letter}}
+				</li>
+		</ul>
+		<div class="clearfix button-container">
 			<button type="button" ng-click="newGame()" class="new-game-button">New Game</button>
 		</div>
 	</div>
+</div>
 </body>
 </html>

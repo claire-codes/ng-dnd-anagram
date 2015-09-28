@@ -1,28 +1,70 @@
-.puzzle-wrapper li {
-	height: 80px;
-	width: 80px;
+.anagram-wrapper {
+	margin: 0 auto;
+	width: 700px;
+}
+.anagram-wrapper li {
+	height: 70px;
+	width: 70px;
 	border: 5px solid #f07;
 	border-radius: 5px;
 	font-size: 52px;
 	list-style: none;
-	display: inline;
+	margin: auto 3px;
+    float: left;
+    text-align: center;
+    cursor: move;
+    background-color: white;
+    color: #f07;
+}
+.anagram-wrapper li:hover {
+	opacity: 0.5;
+}
+.anagram-wrapper li.correct {
+	border: 5px solid #37D037;
+	cursor: default;
+	color: #37D037;
+}
+.anagram-wrapper li.correct:hover {
+	opacity: 1.0;
 }
 body {
 	font-family: Nunito, sans-serif;
+	background-color: #E0E0DB;
+	color: #222;
 }
 
 ul[dnd-list], ul[dnd-list] > li { 
     position: relative;
 }
 
-button {
-	border: 1px solid;
+ul[dnd-list] .dndDraggingSource {
+    display: none;
+}
+
+ul[dnd-list] .dndPlaceholder {
+    display: block;
+    background-color: #ddd;
+    min-height: 42px;
+	border: 5px dashed blue;
+}
+
+
+.new-game-button {
+	border: 3px solid #FF8E00;
 	border-radius: 5px;
 	color: white;
 	font-size: 20px;
+	background-color: #FF8E00;
 }
 
-.new-game-button {
-	background-color: #00ff91;
-	border-color: #00ff91;
+.new-game-button:hover {
+	border: 3px solid #FF8E00;
+	color: #FF8E00;
+	background-color: white;
+}
+.clearfix {
+	clear: both;
+}
+.button-container {
+	padding-top: 10px;
 }

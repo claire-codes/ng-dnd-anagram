@@ -1,13 +1,6 @@
 var services = angular.module('AnagramApp.services', [])
-	.factory('SillyService', [function SillyService() {
-		return {
-			sillySum: function(x, y) {
-				return x + y;
-			}
-		}
-	}])
-	.factory('PuzzleFactory', [function PuzzleFactory() {
-		allPuzzles = [
+	.factory('AnagramFactory', [function AnagramFactory() {
+		allAnagrams = [
 		 {
 		    "clue": [
 		        {
@@ -70,8 +63,8 @@ var services = angular.module('AnagramApp.services', [])
 		}
 		];
 		return {
-			getPuzzle: function() {
-				return allPuzzles[Math.floor(Math.random() * allPuzzles.length)]
+			getAnagram: function() {
+				return allAnagrams[Math.floor(Math.random() * allAnagrams.length)];
 			}
 		};
 	}]);
