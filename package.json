@@ -1,0 +1,24 @@
+{
+  "name": "ng-dnd-anagram",
+  "version": "1.0.0",
+  "description": "[https://gentle-shore-4103.herokuapp.com/](https://gentle-shore-4103.herokuapp.com/)",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claireparker/ng-dnd-anagram.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claireparker/ng-dnd-anagram/issues"
+  },
+  "homepage": "https://github.com/claireparker/ng-dnd-anagram"
+}
