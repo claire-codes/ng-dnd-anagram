@@ -5,6 +5,7 @@ angular.module('AnagramApp.controllers', []).
 		$scope.anagram = angular.copy(AnagramFactory.getAnagram());
 		$scope.won = false;
   		$scope.result = 'Rearrange the letters below to make a word and win!';
+  		document.getElementById('rainmaker').stop();
 	};
 
 	$scope.newGame();
@@ -17,8 +18,8 @@ angular.module('AnagramApp.controllers', []).
 		if (attempt == $scope.anagram.solution) {
 			$scope.result = 'Yay you won! Have another go?';
 			$scope.won = true;
+			document.getElementById('rainmaker').start();
 		}
 	};
-
 
   });

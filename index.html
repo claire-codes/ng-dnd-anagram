@@ -4,6 +4,8 @@
 	<title>Anagram App</title>
 	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style.css" />
+	<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/emoji-rain/emoji-rain.html">
 </head>
 
 <body ng-app="AnagramApp">
@@ -14,6 +16,7 @@
 	<script src="js/controllers.js"></script>
 
 	<div ng-controller="anagramController">
+		<emoji-rain id='rainmaker'></emoji-rain>
 		<div class="anagram-wrapper">
 			<h2>Drag-and-Drop Anagram Game</h2>
 			<h3>{{result}}</h3>
