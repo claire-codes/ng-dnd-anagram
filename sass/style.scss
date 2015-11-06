@@ -1,7 +1,7 @@
 .anagram-wrapper {
   margin: 0 auto;
-  width: 700px; }
-  .anagram-wrapper li {
+  width: 700px;
+  li {
     height: 70px;
     width: 70px;
     border: 5px solid #f07;
@@ -13,48 +13,60 @@
     text-align: center;
     cursor: move;
     background-color: white;
-    color: #f07; }
-    .anagram-wrapper li:hover {
-      opacity: 0.5; }
-    .anagram-wrapper li.correct {
+    color: #f07;
+    &:hover {
+      opacity: 0.5;
+    }
+    &.correct {
       border: 5px solid #37D037;
       cursor: default;
-      color: #37D037; }
-      .anagram-wrapper li.correct:hover {
-        opacity: 1.0; }
+      color: #37D037;
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+}
 
 body {
   font-family: Nunito, sans-serif;
   background-color: #E0E0DB;
-  color: #222; }
+  color: #222;
+}
 
 ul[dnd-list] {
-  position: relative; }
-  ul[dnd-list] > li {
-    position: relative; }
-  ul[dnd-list] .dndDraggingSource {
-    display: none; }
-  ul[dnd-list] .dndPlaceholder {
+  position: relative;
+  > li {
+    position: relative;
+  }
+  .dndDraggingSource {
+    display: none;
+  }
+  .dndPlaceholder {
     display: block;
     background-color: #ddd;
     min-height: 42px;
-    border: 5px dashed blue; }
+    border: 5px dashed blue;
+  }
+}
 
 .new-game-button {
   border: 3px solid #FF8E00;
   border-radius: 5px;
   color: white;
   font-size: 20px;
-  background-color: #FF8E00; }
-  .new-game-button:hover {
+  background-color: #FF8E00;
+  &:hover {
     border: 3px solid #FF8E00;
     color: #FF8E00;
-    background-color: white; }
+    background-color: white;
+  }
+}
 
 .clearfix {
-  clear: both; }
+  clear: both;
+}
 
 .button-container {
-  padding-top: 10px; }
-
-/*# sourceMappingURL=style.css.map */
+  padding-top: 10px;
+}
